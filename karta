@@ -1,0 +1,23 @@
+class Karta:
+    def __init__(self,znaczek,wartosc):
+        self.wartosc = wartosc
+        self.znaczek = znaczek
+    def pokaz(self):
+        return f"{self.znaczek} {self.wartosc}"
+    def uzyj(self):
+        if self.znaczek=='H':
+            if gracz < 20:
+                gracz + self.wartosc
+                if gracz>20:
+                    gracz = 20
+            elif gracz >= 20:
+                return ""
+        elif self.znaczek == 'D':
+            if self.wartosc > wrog.wartosc:
+                print("Wróg pokonany")
+            elif self.wartosc < wrog.wartosc:
+                print("Nie udało się pokonać wroga")
+            
+wrog = Karta('H','10')
+print(wrog.pokaz())
+
