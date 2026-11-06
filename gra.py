@@ -7,12 +7,11 @@ class Karty:
         self.karty[wybur+1].uzyj()
     def check(self):
         for i in self.karty:
-            print(i)
+            print(i.pokaz())
     def draw(self):
         while len(self.karty) < 4:
-            x = random.randint(0,len(self.talia)-1)
-            self.karty.append(self.talia[x])
-            self.talia.remove(self.talia[x])
+            x = random.randint(0,round(len(self.talia)/2))
+            self.karty.append(Karta(self.talia[x],self.talia[x*2]))
 
 class Karta:
     def __init__(self,znaczek,wartosc):
@@ -40,14 +39,34 @@ class Karta:
 
 test = Karty()
 for i in range(1,14):
-    test.talia.append(f"♥{i}")
+    test.talia.append(f"♥")
+    test.talia.append({i})
 for i in range(1,14):
-    test.talia.append(f"♦{i}")
+    test.talia.append(f"♦")
+    test.talia.append({i})
 for i in range(1,14):
-    test.talia.append(f"♣{i}")
+    test.talia.append(f"♣")
+    test.talia.append({i})
 for i in range(1,14):
-    test.talia.append(f"♠{i}")
+    test.talia.append(f"♠")
+    test.talia.append({i})
 bron=0
 killlist=[]
 gracz=20
+print(len(test.talia))
+test.draw()
 
+print(test.check())
+
+# while gracz > 0 and len(Karty.talia) > 0:
+#     print("wybierz opcje:")
+#     print("1. zobacz karty na stole")
+#     print("2. wybierz karte")
+#     print("3. zobacz stan broni")
+#     print("4. wyjdź bo masz skill issue :3")
+#     wybur = int(input("opcja: "))
+#     if wybur == 1:
+#         Karty.check()
+#     elif wybur == 2:
+#         wybur = int(input("wybierz karte: "))
+#         Karty.
