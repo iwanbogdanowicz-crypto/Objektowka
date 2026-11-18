@@ -3,6 +3,7 @@ class Karty:
     def __init__(self):
         self.karty = []
         self.talia=[]
+        self.talia2=[]
     def pick(self,wybur):
         self.karty[wybur+1].uzyj()
     def check(self):
@@ -11,8 +12,8 @@ class Karty:
     def draw(self):
         while len(self.karty) < 4:
             x = random.randint(0,round(len(self.talia)/2))
-            self.karty.append(Karta(self.talia[x],self.talia[x*2]))
-
+            y = random.randint(0,round(len(self.talia2)/2))
+            self.karty.append(Karta(self.talia[x],self.talia2[y]))
 class Karta:
     def __init__(self,znaczek,wartosc):
         self.wartosc = wartosc
@@ -36,29 +37,25 @@ class Karta:
                 if x < 0:
                     x=0
                 gracz -= x
-
-test = Karty()
+karty = Karty()
 for i in range(1,14):
-    test.talia.append(f"♥")
-    test.talia.append({i})
+    karty.talia.append(f"♥")
+    karty.talia2.append({i})
 for i in range(1,14):
-    test.talia.append(f"♦")
-    test.talia.append({i})
+    karty.talia.append(f"♦")
+    karty.talia2.append({i})
 for i in range(1,14):
-    test.talia.append(f"♣")
-    test.talia.append({i})
+    karty.talia.append(f"♣")
+    karty.talia2.append({i})
 for i in range(1,14):
-    test.talia.append(f"♠")
-    test.talia.append({i})
+    karty.talia.append(f"♠")
+    karty.talia2.append({i})
 bron=0
 killlist=[]
 gracz=20
-print(len(test.talia))
-test.draw()
-
-print(test.check())
-
-# while gracz > 0 and len(Karty.talia) > 0:
+karty.draw()
+print(karty.check())
+#while gracz > 0 and len(Karty.talia) > 0:
 #     print("wybierz opcje:")
 #     print("1. zobacz karty na stole")
 #     print("2. wybierz karte")
