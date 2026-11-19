@@ -62,6 +62,9 @@ while gracz > 0:
      print("3. zobacz stan broni")
      print("4. wyjdź bo masz skill issue :3")
      wybur = input("opcja: ")
+     if gracz <= 0:
+         print("Przegraleś!")
+         break
      if wybur == "1":
         karty.draw()
         print(karty.check())
@@ -69,4 +72,10 @@ while gracz > 0:
          break
      elif wybur == "3":
         print("Stan broni:",bron)
-    
+     elif wybur == "2":
+         karty.draw()
+         print(karty.check())
+         w = input("Wybierz kartę:")
+         if w == "1":
+            print(karty.karty[0].pokaz())
+
