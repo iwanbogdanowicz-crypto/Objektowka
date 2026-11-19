@@ -53,17 +53,20 @@ for i in range(1,14):
 bron=0
 killlist=[]
 gracz=20
-karty.draw()
-print(karty.check())
-#while gracz > 0 and len(Karty.talia) > 0:
-#     print("wybierz opcje:")
-#     print("1. zobacz karty na stole")
-#     print("2. wybierz karte")
-#     print("3. zobacz stan broni")
-#     print("4. wyjdź bo masz skill issue :3")
-#     wybur = int(input("opcja: "))
-#     if wybur == 1:
-#         Karty.check()
-#     elif wybur == 2:
-#         wybur = int(input("wybierz karte: "))
-#         Karty.
+# karty.draw()
+# print(karty.check())
+while gracz > 0:
+     print("wybierz opcje:")
+     print("1. zobacz karty na stole")
+     print("2. wybierz karte")
+     print("3. zobacz stan broni")
+     print("4. wyjdź bo masz skill issue :3")
+     wybur = input("opcja: ")
+     if wybur == "1":
+        karty.draw()
+        print(karty.check())
+     elif wybur == "4":
+         break
+     elif wybur == "3":
+        print("Stan broni:",bron)
+    
